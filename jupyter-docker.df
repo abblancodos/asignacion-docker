@@ -5,9 +5,8 @@ RUN apk update && apk add --no-cache \
     build-base \
 #   ... \
 
-# Agregar las dependencias de python
-RUN pip install jupyter \
-#   ... \
+# 2. Crear entorno virtual en /root
+RUN cd /root && python3 -m venv sklearn-env
 
 # Seguir pasos del punto 3. Configuración de Jupyter
 WORKDIR /app
